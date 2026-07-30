@@ -1,7 +1,9 @@
 import { AiFillLinkedin } from 'react-icons/ai';
 import { CgFileDocument } from 'react-icons/cg';
 import headerText from '../assets/images/header-text.svg';
+import headerTextCompliance from '../assets/images/header-text-compliance.svg';
 import headerTextMob from '../assets/images/header-text-mob.svg';
+import headerTextComplianceMob from '../assets/images/header-text-compliance-mob.svg';
 import headerImg from '../assets/images/header-img.png';
 import vectorUnderline from '../assets/icons/vector-underline.svg';
 
@@ -10,7 +12,21 @@ export default function Hero() {
     <section className="relative flex w-full flex-col items-center px-6 pt-[130px] pb-16 sm:px-10 sm:pt-[160px] lg:items-start lg:px-20 lg:pt-[270px] lg:pb-[80px]">
       {/* Mobile / tablet: composited text + overlapping portrait */}
       <div className="relative mb-8 w-full max-w-[420px] aspect-[524/300] sm:max-w-[480px] lg:hidden">
-        <img src={headerTextMob} alt="" className="absolute left-0 top-0 w-[68%]" aria-hidden />
+        <div className="hero-wordmark-glitch absolute left-0 top-0 w-[68%]">
+          <img src={headerTextMob} alt="" className="wordmark-layer wordmark-a" aria-hidden />
+          <img src={headerTextComplianceMob} alt="" className="wordmark-layer wordmark-b" aria-hidden />
+          <span
+            className="glitch-layer glitch-cyan"
+            style={{
+              maskImage: `url(${headerTextComplianceMob})`,
+              WebkitMaskImage: `url(${headerTextComplianceMob})`,
+            }}
+          />
+          <span
+            className="glitch-layer glitch-red"
+            style={{ maskImage: `url(${headerTextMob})`, WebkitMaskImage: `url(${headerTextMob})` }}
+          />
+        </div>
         <img
           src={headerImg}
           alt="Gladwin Bosco"
@@ -24,7 +40,18 @@ export default function Hero() {
         alt="Gladwin Bosco"
         className="hidden lg:absolute lg:top-[100px] lg:left-[40%] lg:z-2 lg:block lg:h-[600px] lg:w-[30%] lg:object-cover lg:object-top"
       />
-      <img src={headerText} alt="" className="hidden h-auto w-[100%] max-w-[none] lg:block" aria-hidden />
+      <div className="hero-wordmark-glitch relative hidden w-full lg:block">
+        <img src={headerText} alt="" className="wordmark-layer wordmark-a" aria-hidden />
+        <img src={headerTextCompliance} alt="" className="wordmark-layer wordmark-b" aria-hidden />
+        <span
+          className="glitch-layer glitch-cyan"
+          style={{ maskImage: `url(${headerTextCompliance})`, WebkitMaskImage: `url(${headerTextCompliance})` }}
+        />
+        <span
+          className="glitch-layer glitch-red"
+          style={{ maskImage: `url(${headerText})`, WebkitMaskImage: `url(${headerText})` }}
+        />
+      </div>
 
       <div className="relative z-3 mt-4 flex flex-col items-center gap-3 text-center lg:items-start lg:text-left">
         <div className="mt-4 flex flex-col items-center gap-3 sm:flex-row">

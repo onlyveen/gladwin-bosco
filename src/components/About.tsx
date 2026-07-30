@@ -12,7 +12,7 @@ export default function About() {
           </h2>
           <p className="font-poppins text-lg font-extralight">
             <span className="font-bold text-[#d98200]">AntStack</span> wasn't incorporated when I started. There was
-            no entity, no bank account, no payroll, no contracts — just two founders and an intent. I built the
+            no entity, no bank account, no payroll, no contracts — just three founders and an intent. I built the
             rest.
           </p>
           <p className="font-poppins text-lg font-extralight">
